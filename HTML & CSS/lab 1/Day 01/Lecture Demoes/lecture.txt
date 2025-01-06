@@ -1,0 +1,113 @@
+HTML ==> Hyper Text Mark Up Language 
+interpreter
+
+predefined tags 
+
+<p> iti</p>
+<b>iti</b>
+
+browser 
+- static web Page 
+
+- client 
+
+- Server 
+
+http://www.facebook/home.html //  URI 
+www.facebook/home.html 
+
+HTTP : Hyper Text Transefer Protocol 
+www: World Wide Web 
+
+LAN : Local Area Network 
+
+WAN : wide Area  Network .
+
+WWW
+
+================
+
+#   name     age 
+1    ali     25
+
+===========================
+<b> ==<B>
+w3c 
+
+lower case letters 
+<html>
+
+<head> <title></title>
+</head>
+<body>
+</body>
+</html>
+
+================ tags
+
+1- couple tags / Paired tags 
+<p>iti</p>
+
+2- paired tag with attribute
+  <p attr_name="value">iti</p>
+<p align="center">iti</p>
+
+3- self closing tag 
+<img />
+
+4- self closing tag  with attr
+<img src="" />
+
+=================================
+
+<p><b>iti</b></p>
+
+=====================
+1-Text
+2-Image 
+3- Table 
+4- form 
+
+======
+note pad 
+
+==========
+Text 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

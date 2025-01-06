@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>ass6</title>
+	</head>
+	<body>
+		<h1> A simple C program:</h1>
+		
+		<pre>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+int exp(int base, int power)
+&#123;
+	if(power==0)
+	  &#123;		return 1&#x3b;
+	else
+	  &#123;		power--&#x3b;
+			return base*exp(base,power)&#x3b;
+	  &#125;	
+&#125;
+main()
+&#123;
+	int x=2 , y=3 &#x3b;
+	clrscr()&#x3b;
+	printf("\n %d ^ %d = %d",x,y,exp(x,y))&#x3b;
+	getch()&#x3b; return 0&#x3b;
+&#125;
+</pre>
+<b>Using the pre element</b>
+	</body>
+</html>

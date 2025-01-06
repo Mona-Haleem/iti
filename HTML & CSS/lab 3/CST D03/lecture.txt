@@ -1,0 +1,105 @@
+CSS
+static web page 
+
+problems
+
+1- redunuduncy
+
+2- Maintability
+
+3- image : center  >> border color  for image  && font size 7
+
+4- Mixing between tables Data  and Design
+
+=================================
+selector {
+  prop:value;
+  prop:value;
+  prop:value;
+
+
+} // css
+
+p{
+   text-align: center;
+}
+===============
+where to write css 
+1- External Style 
+2- Internal Style 
+   <head> <style>
+
+3- inline style  style attr 
+
+=============================
+
+selector {
+  prop:value;
+  prop:value;
+  prop:value;
+
+
+} // css
+
+
+
+
+********** selectors 
+ID Selector 
+Tag name Selector 
+Class Selector 
+Attribute Selectoir 
+Grouping Selector 
+
+Hirarical Selector 
+
+Nth: Child Selector 
+
+first Child 
+Last Child 
+Pesudeo Class Selectors 
+
+Universal Selector 
+
+=====================================
+interpreter
+
+from top to bottom 
+from left to right 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
