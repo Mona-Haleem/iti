@@ -1,0 +1,66 @@
+
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+button{
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+    width: 100px;
+}
+
+table{
+    width: 50%;
+}
+
+.SD{
+    background-color: pink;
+}
+
+.OS{
+    background-color: lightyellow;
+}
+.EL{
+    background-color: lightblue;
+}
+label{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    width: 50px;
+}
+form > label{
+    width: 130px;
+}
+input[type=radio]{
+    margin: 10px 0;
+    
+}
+input[type=text],input[type=number]{
+    margin: 10px 0;
+    display: inline-block;
+    width:200px;
+}
+
+select{
+    margin: 10px 0;
+    width: 80px;
+}
+
+
+input + span{
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+input.invalid+span{
+    display: inline ;
+}
+
+input.invalid{
+    border: 2px solid red;
+}
