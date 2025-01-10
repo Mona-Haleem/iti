@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 250px repeat(4,1fr);
+    grid-template-rows: 60px repeat(3,1fr);
+    grid-template-areas: "section header header header header"
+                         "section content content content content"
+                         "section content content content content"
+                         "section content content content content"
+                         "section content content content content";
+                         
+}
+
+header{
+    background: #bfa77b;
+    grid-area: header;
+    padding: 10px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;    
+}
+
+header li {
+
+    color: #ffffff ;
+    margin: 0 10px;
+    padding: 5px 10px;
+}
+
+header li:first-child{
+    background-color: #eea00e87;
+    border-radius: 5px;
+
+}
+
+section{
+    background-color: white;
+    grid-area: section;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    color: gray;
+}
+section h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(78, 78, 85);
+    font-size: 5.5em;
+}
+section h1::first-letter{
+    color: transparent;
+    background-image: linear-gradient(to bottom, orange 35%,transparent 35%, rgb(78, 78, 85) 35%);
+    background-clip: text;
+}
+
+section li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+section li:first-child{
+   color: black;
+}
+
+#contacts{
+ margin: 30px 0;
+}
+
+#contacts > img{
+    margin-right: 10px;
+}
+
+section h4{
+    margin: 20px 0 ;
+} 
+#flicker{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px 0;
+    flex-wrap: wrap;
+}
+
+#flicker>img{
+    width: 30%;
+   
+}
+
+body > img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
