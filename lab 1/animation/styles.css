@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+#box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    animation: box-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition: transform 0.5s;
+}
+
+#box:hover{
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+#controls{
+    position: relative;
+    font-size: 100px;
+    top:45%;
+    left:45%;
+
+}
+.stop{
+    animation-play-state:stop;
+}
+
+.start{
+    animation-play-state: start;
+}
+
+button{
+    font-size: 20px;
+    padding: 10px;
+}
+
+@keyframes box-animation{
+    0%{
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
+    25%{
+        top:0;
+        left:calc(100% - 200px);
+        background-color:yellow;
+    }
+    50%{
+        top:calc(100% - 200px);
+        left:calc(100% - 200px);
+        background-color: blue;
+    }
+    75%{
+        top:calc(100% - 200px);
+        left:0;
+        background-color: green;
+    }
+}

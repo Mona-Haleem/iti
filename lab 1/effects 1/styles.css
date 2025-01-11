@@ -1,0 +1,117 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#main-container{
+    margin: 50px auto;
+    border: 4px solid rgb(241, 239, 108);
+    border-radius: 20px;
+    width: 80vw;
+    height: 82vh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #33ebb4 10px 10px 70px inset, #e757e7 10px 10px 50px ;
+    transition: transform 3s ,box-shadow 3s;
+
+}
+
+#main-container:hover{
+    transform: skew(10deg);
+    box-shadow: #33ebb4 10px 10px 70px inset,#53a7f5 10px 10px 50px ;
+
+}
+
+#main-container:active{
+    box-shadow: #ebdf33 10px 10px 70px inset,#f58153 10px 10px 50px ;
+    transform: scale(0.5);
+
+   
+}
+
+#text-container{
+    border: 4px solid rgb(44, 26, 9);
+    border-radius: 20px;
+    height: 100%;
+    flex-grow: 1;
+    width: 30%;
+    overflow: auto;
+    resize: both;
+    padding: 10px;
+    column-count: 3;
+    column-rule: 3px solid red;
+    background-image: radial-gradient( #f1f5c0 55%, #4D9F0C);
+    text-align: center;
+    margin-right:20px;
+    text-decoration: underline;
+}
+
+mark{
+    background-color: rgb(250, 76, 76);
+    transition: all 2s;
+}
+
+mark:hover{
+   box-shadow: yellow -7px 0 10px inset; 
+}
+
+mark:active{
+    font-size: 18px;
+    background-color: rgb(230, 199, 255);
+    box-shadow: rgb(13, 0, 128) -5px 0 10px inset; 
+
+}
+
+#img-container{
+    border: 4px solid blue;
+    border-radius: 20px;
+    width: 60%;
+    flex-grow: 2;
+    overflow:auto ;
+    resize: both;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: #33ebb4 10px 10px 100px inset;
+
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border: 4px solid rgb(153, 0, 255);
+    margin: 10px;
+    box-shadow: #e757e7 5px 5px 10px ;
+    transition: all 2s;
+
+}
+
+img:hover{
+    border-color:rgb(207, 103, 248);
+    transform: scale(1.25);
+
+}
+
+img:active{
+    border: none;
+    transform: scale(2);
+}
+
+
+@media screen and (orientation:portrait) {
+    img{
+        margin: 40px;
+        transform: rotate(45deg);
+    }
+
+    img:hover{
+        border: 5px dashed blue;
+    }
+
+    mark{
+        background-color: blue;
+    }
+    
+}

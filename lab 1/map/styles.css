@@ -1,0 +1,140 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+ul{
+    display:flex;
+    
+    min-height:10vh;
+    justify-content:space-evenly;
+    align-items:center;
+}
+ul>li{
+    list-style:none;
+}
+.cover{
+    background-image:url(images/laptop_top.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+.cover>h4{
+    font-size:2rem;
+    margin:1rem;
+}
+.cover>button{
+    outline:none;
+    border:none;
+    padding:1rem 1.2rem;
+    border-radius:0.2rem;
+    font-weight:bold;
+    background-image:linear-gradient(to left, transparent,rgb(111, 174, 243));
+}
+.cover>button:hover{
+    background-image:linear-gradient(to right, transparent,rgb(111, 174, 243));
+}
+
+h1{
+    text-align: center;
+    color: #a55239;
+    margin: 10px;
+}
+
+h1+p{
+    text-align: center;
+}
+#branch-map{
+    display: flex;
+    padding: 50px;
+}
+
+#map{
+    flex-grow: 1;
+    height: 100%;
+}
+
+#branches{
+    display: flex;
+    flex-grow: 1;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.branch{
+    background-color: lightgray;
+    color: #33494e;
+    height: 100px;
+    padding: 5px;
+    margin: 5px 5px;
+    width: 45%;
+}
+
+#branches .branch:first-child{
+    color: #a55239;
+}
+
+#map-key{
+    position: relative;
+    width: 90%;
+}
+#map-key span:nth-child(odd){
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+#map-key span:nth-child(1){
+    background-color: #a55239;
+}
+#map-key span:nth-child(3){
+    background-color: #33494e;
+    margin-left: 10px;
+}
+footer{
+    width: 100%;
+    background-color: black;
+    color: gray;
+    display: flex;
+    padding: 20px;
+}
+footer h3{
+    color: white;
+}
+footer div:first-child{
+    width: 60%;
+}
+footer  p{
+    margin: 10px 0;
+}
+footer div:last-child h3{
+    margin: 10px;
+}
+.contact{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    
+}
+.contact img{
+    position: relative;
+    top: 10px;
+    width: 30px;
+}
+
+.highlight{
+    background-color: rgba(220, 70, 0, 0.5) !important;
+}

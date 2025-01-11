@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            padding:0;margin:0;
+        }
+        #mainwrapper{
+            border:2px solid black;
+            margin:10px auto;
+            padding:5px;
+            width:80%;
+        }
+        #mainheader,#mainfooter{
+            border:1px solid black;
+            padding:10px 0;
+            margin:5px;
+            text-align:center;
+            background-color:lightblue;
+        }
+        #mainnav{
+            background-color:blue;
+            margin:5px;
+            color:white;
+        }
+        #mainnav>ul>li{
+            list-style:none;
+            display:inline-block;
+            padding:5px;
+            margin:5px 10px;
+            width:70px;
+        }
+        #mainnav>ul>li:hover{
+            color:yellow;
+            cursor:pointer;
+            text-decoration:underline;
+        }
+        #mainsection{
+            width:60%;
+            border:2px solid black;
+            padding:5px;
+            margin:5px;
+            float:left;
+        }
+        #mainsection>article{
+            border:2px solid black;
+            padding:5px;
+            margin:5px;
+        }
+        #mainaside{
+            border:2px solid black;
+            padding:5px;
+            margin:5px;
+            float:right;
+            width:30%;
+
+        }
+        #mainaside>p{
+            border:1px solid black;
+            padding:5px;
+            margin:5px;
+        }
+        #mainaside>p:nth-child(odd){
+            background-color:lightyellow;
+        }
+        #mainaside>p:nth-child(even){
+            background-color:lightgray;
+        }
+        #mainfooter{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainwrapper">
+        <header id="mainheader">
+            <h4>ITI Mansoura</h4>
+        </header>
+        <nav id="mainnav">
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>About</li>
+            </ul>
+        </nav>
+        <section id="mainsection">
+            <article>
+                <header>
+                    <h5>Artcle one</h5>
+                </header>
+                <p>Article one body</p>
+                <footer>Article one footer</footer>
+            </article>
+            <article>
+                <header>
+                    <h5>Article two</h5>
+                </header>
+                <p>Article two body</p>
+                <footer>Article two footer</footer>
+            </article>
+        </section>
+        <aside id="mainaside">
+            <p>Mansoura</p>
+            <p>Tanta</p>
+            <p>Smart</p>
+            <p>NewCapital</p>
+        </aside>
+        <footer id="mainfooter">
+            <p>Copyrights &copy; Reserved to ITI Mansoura</p>
+        </footer>
+    </div>
+</body>
+</html>
