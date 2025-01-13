@@ -1,0 +1,16 @@
+@import "./variables","./placeholder";
+.btn{
+    @extend %btn;
+}
+.btn-success{
+    background-color:$btnsuccess;
+    color:$fglight;
+}
+.btn-danger{
+    background-color:$btndanger;
+    color:$fglight;
+}
+.btn-warning{
+    background-color:$btnwarning;
+    color:$fglight;
+}

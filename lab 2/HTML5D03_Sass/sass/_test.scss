@@ -1,0 +1,152 @@
+//variables
+// $bgcolor:red;
+// $fgcolor:white;
+// p{
+//     color:$bgcolor;
+// }
+//nesting
+// .container{
+//     border:2px solid black;
+//     .internalwrapper{
+//         color:red;
+//         p{
+//             background-color:yellow;
+//             &:hover{
+//                 color:black;
+//             }
+//         }
+//     }
+// }
+
+// placeholders : for Selectors
+// %main{
+//     color:red;
+//     border:2px solid black;
+// }
+// %submain{
+//     @extend %main;
+//     background:yellow;
+// }
+// .mainwrapper{
+//     @extend %main;
+//     text-align:center;
+// }
+// .internalwrapper{
+//     @extend %main;
+//     text-transform:capitalize;
+// }
+
+// .child{
+// @extend %submain;
+// height: 200px;
+// }
+
+// @for $i from 1 through 100{
+//     .mcit-#{$i}{
+//         color:Red;
+//         font-size:$i*1rem;
+//     }
+// }
+
+// -webkit-transform:scale(2) ; chrome and safari
+// -o-transform:scale(2) ; opera
+//-moz-transform:scale(2)
+//-ms-transform:scale(2)
+//transform:scale(2)
+
+
+// mixin
+
+// @mixin transformMixin($transformation_Value){
+// -webkit-transform: $transformation_Value;
+// -o-transform:$transformation_Value; 
+// -moz-transform:$transformation_Value;
+// -ms-transform:$transformation_Value;
+// transform:$transformation_Value;
+// }
+
+// p{
+//     @include transformMixin(scale(2));
+//     border:2px solid black;
+// }
+// div{
+    
+//     @include transformMixin(rotate(45deg));
+// }
+
+// @for $i from 1 through 12
+// {
+//     .col-#{$i}{
+//         width:(100/15*$i)*1%;
+//     }
+// }
+
+.container{
+    width:90%;
+    margin:0.5rem auto;
+}
+.container-fluid{
+    width:100%;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+@mixin gridgenerator($numberofcolumns,$screeninfix,$screenwidth){
+    @media screen and ( min-width:$screenwidth){
+        @if ($screeninfix==""){
+            .d-none{
+                display:none !important;
+            }
+            .d-block{
+                display:block !important;
+            }
+            @for $i from 1 through $numberofcolumns{
+                .col-#{$i}{
+                    width:(100/$numberofcolumns*$i)*1%;
+                }
+                .offset-#{$i}{
+                    margin-left:(100/$numberofcolumns*$i)*1%;
+                }
+            } 
+        }
+        @else{
+            .d-#{$screeninfix}-none{
+                display:none !important;
+            }
+            .d-#{$screeninfix}-block{
+                display:block !important;
+            }
+            @for $i from 1 through $numberofcolumns{
+                .col-#{$screeninfix}-#{$i}{
+                    width:(100/$numberofcolumns*$i)*1%;
+                }
+                .offset-#{$screeninfix}-#{$i}{
+                    margin-left:(100/$numberofcolumns*$i)*1%;
+                }
+            } 
+        }
+    }
+}
+
+@include gridgenerator(12,"" ,0px );
+@include gridgenerator(12,"sm" ,576px );
+@include gridgenerator(12,"md" ,768px );
+@include gridgenerator(12,"lg" ,992px );
+@include gridgenerator(12,"xl" ,1200px );
+@include gridgenerator(12,"xxl" ,1400px );
+
+// m-1..5
+//p-1..5
+//mt-1..5
+//mb | ms-1..5 | me-1..5
+
+
+// .container .internalwrapper 
+//scoping
+// placeholders
+// mixin ,  @include
+// loop :  for to , through
+// placeholders with files 
+// 7-1 architicture pattern

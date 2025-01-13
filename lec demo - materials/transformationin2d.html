@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        section{
+            width:1000px;
+            /*height:200px;*/
+            /*border:2px solid black;*/
+            margin:10px auto;
+            text-align:center;
+            /*transform:rotate(-45deg);*/
+            /*transform:scale(0.5);*/
+            /*transform:skew(45deg);*/
+            /*transform:translate(-150px,-150px);*/
+        }
+        img{
+            width:200px;
+            height:200px;
+            margin:10px;
+            border-radius:50%;
+            transform:rotate(-10deg);
+            opacity:0.5;
+            transition:all 2s;
+        }
+        img:hover{
+            transform:rotate(0deg) scale(1.1);
+            opacity:1;
+        }
+        img:active{
+            transform:rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="UP/1.jpg" />
+        <img src="UP/1.jpg" />
+        <img src="UP/1.jpg" />
+        <img src="UP/1.jpg" />
+    </section>
+</body>
+</html>

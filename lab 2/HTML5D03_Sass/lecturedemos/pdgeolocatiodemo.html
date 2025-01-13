@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #mymap {
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB90FxtYG_ybAYXGkz0ybkmkboE2nEbezI"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            mymap = this.document.getElementById('mymap');
+        });//end of load
+        function getloactionfun() {
+            // 1- check exience
+            if (navigator.geolocation) {
+                // exist
+                // 2- get permission  : using method getCurrentPosition(successCallback,errorcallback);
+                navigator.geolocation.getCurrentPosition(getposition, errorhandler);
+
+            } else {
+                //not exist
+                mymap.innerText = "Update Your Browser And Try Again !";
+            }
+        }
+        function getposition(position) {
+            /*alert("Success");*/
+            //console.log(arguments[0]);
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            //latlon = lat + " : " + lon;
+            //mymap.innerText = latlon;
+
+           /* google steps 
+            * 1- create location object with lat lon values which getted from geolocation using google constructor
+            * 2- determine specs of map : center : created location obejcts  : zoom
+            * 3- display map
+            * 
+            * 
+            */
+            var location = new google.maps.LatLng(lat, lon);
+            //2- specify specs of map : zoom : , center
+            var specs = { zoom: 17, center: location };
+            // 3 retrive map and display map
+            new google.maps.Map(mymap, specs);
+
+        }
+        function errorhandler() {
+            alert("Error");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="getLocationData" onclick="getloactionfun();"/>
+    <div id="mymap">
+
+    </div>
+</body>
+</html>
