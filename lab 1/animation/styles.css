@@ -26,12 +26,13 @@ body{
 }
 
 #controls{
-    position: relative;
+    position: absolute;
     font-size: 100px;
-    top:45%;
-    left:45%;
+    top:40%;
+    left:40%;
 
 }
+
 .stop{
     animation-play-state:stop;
 }

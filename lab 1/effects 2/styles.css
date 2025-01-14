@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 99vw;
+    height: 100vh;
+    color: white;
+    background:linear-gradient(to top right,
+                                rgba(0,0,0,0.9),
+                                rgba(0,0,0,0.3)),
+                url(images/p3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 3em;
+    text-align: center;
+}
+header >p{
+    width: 75%;
+    margin: 20px;
+}
+
+header > button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.5s ;
+}
+
+header >button:hover{
+    background-color: rgb(247, 94, 33);
+}
+
+#activities{
+    text-align: center;    
+}
+
+#activities > h1{
+    font-size: 2em;
+    padding: 20px 50px;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+    margin: 20px;
+}
+
+#activities > div{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    padding: 10px ;
+}
+
+.activity{
+    position: relative;
+    flex: 1 1 200px;
+    margin: 30px 20px;
+}
+
+.activity > p {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.activity > img{
+   width: 100%;
+   position: relative;
+   top: 0;
+   transition: top 0.5s;
+}
+
+
+.contacts{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    background: #f39596;
+    display: flex;
+    visibility: hidden;
+    height: 0;
+    justify-content: space-around;
+    margin: 0;
+    transition: all 0.5s;
+
+}
+
+.contact-img{
+    border: 1px solid white;
+    height: 60px;
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px !important;
+}
+
+.contact-img > div{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+.twitter{
+    mask-image:url(images/twitter.png);
+}
+.facebook{
+    mask-image:url(images/face.png);
+}
+.insta{
+    mask-image:url(images/insta.png);
+}
+.youtube{
+    mask-image:url(images/youtube.png);
+}
+
+.activity:hover > img{
+    top: -55px;
+}
+
+.activity:hover .contacts{
+    visibility:visible;
+    height: 62px;
+    bottom: 80px;
+}
+
+
+
+.contact-img:hover{
+    background-color:  white;
+}
+
+.contact-img:hover > div{
+    background-color: #f39596;
+}
+
+#details{
+    margin: 20px 0;
+    display: flex;
+}
+
+#details > div {
+    flex:  1 1 25%;
+}
+
+#details img {
+    width:100%;
+    opacity :0.5;
+    transition:opacity 1s;
+}
+
+#details p {
+   visibility: hidden;
+   padding: 20px;
+   text-align: center;
+   line-height: 1.8em;
+}
+
+#details img:hover{
+    opacity: 1;
+}
+
+#details img:hover + p {
+    visibility:visible;
+}
+
+@media screen and (orientation:portrait){
+   
+    #activities > div{
+        flex-direction: column;
+        width: 90%;
+    }   
+    #details{
+        flex-direction: column;
+    }
+}
