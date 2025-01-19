@@ -52,6 +52,7 @@ h1+p{
 }
 #branch-map{
     display: flex;
+    flex-wrap: wrap;
     padding: 50px;
 }
 
@@ -99,11 +100,13 @@ h1+p{
     background-color: #33494e;
     margin-left: 10px;
 }
+
 footer{
     width: 100%;
     background-color: black;
     color: gray;
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
 }
 footer h3{
@@ -138,3 +141,12 @@ footer div:last-child h3{
 .highlight{
     background-color: rgba(220, 70, 0, 0.5) !important;
 }
+@media screen and (orientation:portrait) {
+    footer > div, #branch-map >section{
+        width: 100% !important;
+        text-align: center;
+        margin: 20px;
+    }
+    
+}
+

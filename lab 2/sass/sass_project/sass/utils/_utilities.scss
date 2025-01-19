@@ -1,0 +1,35 @@
+@import "./mixins";
+
+@include flexgenerator("" ,0px );
+@include flexgenerator("-sm" ,576px );
+@include flexgenerator("-md" ,768px );
+@include flexgenerator("-lg" ,992px );
+@include flexgenerator("-xl" ,1200px );
+@include flexgenerator("-xxl" ,1400px );
+
+@include spacegenerator("" ,0px );
+@include spacegenerator("-sm" ,576px );
+@include spacegenerator("-md" ,768px );
+@include spacegenerator("-lg" ,992px );
+@include spacegenerator("-xl" ,1200px );
+@include spacegenerator("-xxl" ,1400px );
+
+.bg-main{
+    background-color: $maincColor;
+}
+
+.bg-accent{
+    background-color: $accentColor;
+}
+
+.border-light{
+    border: $borderthickness solid $borderColorLight;
+}
+
+.border-dark{
+    border: $borderthickness solid $borderColorDark;
+}
+
+.rounded-50{
+    border-radius: $borderRadius 0;
+}

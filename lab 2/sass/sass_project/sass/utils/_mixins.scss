@@ -1,0 +1,59 @@
+@import "./variables";
+
+@mixin gridgenerator($numberofcolumns,$screeninfix,$screenwidth){
+    @media screen and ( min-width:$screenwidth){
+        @for $i from 1 through $numberofcolumns{
+            .col#{$screeninfix}-#{$i}{
+                width:(100/$numberofcolumns*$i)*1%;
+            }
+            
+        } 
+        
+    }
+}
+
+@mixin flexgenerator($screeninfix,$screenwidth){
+    @media screen and (min-width:$screenwidth){
+       .d#{$screeninfix}-none{
+            display:none !important;
+        }
+        .d#{$screeninfix}-block{
+            display:block !important;
+        }
+    
+    }
+}
+
+@mixin spacegenerator($screeninfix,$screenwidth){
+    @media screen and (min-width:$screenwidth){
+        $directions: t top, b bottom, l left, r right, x (left right), y (top bottom);
+        @for $i from 1 through 5{
+            .m#{$screeninfix}-#{$i}{
+                margin:$spacingUnit*$i ;
+            }
+            .p#{$screeninfix}-#{$i}{
+                padding:$spacingUnit*$i;
+            }
+            @each $abbr, $props in $directions {
+                @if type-of($props) == list {
+                    .m#{$abbr}#{$screeninfix}-#{$i} {
+                    margin-#{nth($props, 1)}: $spacingUnit * $i ;
+                    margin-#{nth($props, 2)}: $spacingUnit * $i ;
+                    }
+                    .p#{$abbr}#{$screeninfix}-#{$i} {
+                    padding-#{nth($props, 1)}: $spacingUnit * $i ;
+                    padding-#{nth($props, 2)}: $spacingUnit * $i ;
+                    }
+                } @else {
+                    .m#{$abbr}#{$screeninfix}-#{$i} {
+                    margin-#{$props}: $spacingUnit * $i ;
+                    }
+                    .p#{$abbr}#{$screeninfix}-#{$i} {
+                    padding-#{$props}: $spacingUnit * $i;
+                    }
+                }
+            }
+        } 
+        
+    }
+}

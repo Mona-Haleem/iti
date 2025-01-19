@@ -1,0 +1,57 @@
+section{
+    width:400px;
+    min-height:400px;
+    text-align:center;
+    border:2px solid black;
+    float:left;
+    margin:10px 50px;
+}
+
+section >div{
+    position: relative;
+    display: inline-block;
+}
+
+section > div::before {
+    content: var(--pseudo-content, "X 0");
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: brown;
+    padding: 5px;
+    border-radius: 0 0 15px ;
+    color: yellow;
+}
+
+div > span{
+    width: 90px;
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: brown;
+    padding: 5px;
+    color: yellow;
+}
+
+
+div:hover > span{
+    display: block;
+}
+
+
+img{
+    width:100px;
+    height:100px;
+    margin:10px;
+}
+
+h1{
+    clear: both;
+    padding: 20px;
+    border: 3px solid blue;
+    background-color: rgba(0, 0, 255, 0.183);
+    margin: 20px 50px;
+    border-radius: 10px;
+}

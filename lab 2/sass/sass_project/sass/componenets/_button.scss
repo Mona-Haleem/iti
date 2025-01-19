@@ -1,0 +1,17 @@
+@import "../variables";
+.btn{
+    outline: none;
+    background-color: white;
+    border: $borderthickness solid $borderColorDark;
+    padding: $spacingUnit*2;
+    margin: $spacingUnit*2 $spacingUnit;
+    font-size: $defaultFont;
+}
+
+@media screen and (max-width:768px) {
+    button{
+        width:100% ;
+        margin: 5px !important;
+        
+    }   
+}

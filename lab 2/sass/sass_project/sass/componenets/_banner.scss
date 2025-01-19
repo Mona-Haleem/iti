@@ -1,0 +1,32 @@
+.banner{
+    background:linear-gradient(#354F99 ,#6384AD);
+    width: 100%;
+    position: relative;
+    span{
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        color: white;
+        font-size: 3em;
+        text-shadow: 3px 3px 2px black;
+
+    }
+}
+
+@media screen and(max-width:576px) {
+    .banner{
+        font-size: 50%;
+        img{
+            display: block;
+            width:100%;
+        }
+        
+    }    
+}
+
+@media screen and (max-width:768px) {
+    .banner{
+        margin-top: 10px;
+    }
+    
+}

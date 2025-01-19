@@ -3,8 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 header{
-    width: 99vw;
+    width: 100vw;
     height: 100vh;
     color: white;
     background:linear-gradient(to top right,
@@ -20,7 +21,9 @@ header{
     align-items: center;
     line-height: 3em;
     text-align: center;
+    overflow: hidden;
 }
+
 header >p{
     width: 75%;
     margin: 20px;
@@ -66,12 +69,17 @@ header >button:hover{
     margin: 30px 20px;
 }
 
-.activity > p {
+.activity > div{
+    position: relative; 
+    width: 100%; 
+}
+
+.activity p {
     position: relative;
     padding: 10px 20px;
 }
 
-.activity > img{
+.activity  img{
    width: 100%;
    position: relative;
    top: 0;
@@ -122,14 +130,14 @@ header >button:hover{
     mask-image:url(images/youtube.png);
 }
 
-.activity:hover > img{
+.activity:hover  img{
     top: -55px;
 }
 
 .activity:hover .contacts{
     visibility:visible;
     height: 62px;
-    bottom: 80px;
+    bottom: 0;
 }
 
 
@@ -173,7 +181,7 @@ header >button:hover{
 }
 
 @media screen and (orientation:portrait){
-   
+  
     #activities > div{
         flex-direction: column;
         width: 90%;

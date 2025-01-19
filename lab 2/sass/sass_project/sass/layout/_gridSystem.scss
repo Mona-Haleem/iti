@@ -1,0 +1,29 @@
+@import "./mixins";
+
+
+
+.container{
+    width:90%;
+    margin:0.5rem auto;
+}
+
+.container-fluid{
+    width:100%;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+
+
+@include gridgenerator(12,"" ,0px );
+@include gridgenerator(12,"-sm" ,576px );
+@include gridgenerator(12,"-md" ,768px );
+@include gridgenerator(12,"-lg" ,992px );
+@include gridgenerator(12,"-xl" ,1200px );
+@include gridgenerator(12,"-xxl" ,1400px );
+
+
+
+

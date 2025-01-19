@@ -1,0 +1,81 @@
+main{
+    padding: 0px;
+    margin: 40px ;
+    box-shadow:rgb(248, 137, 27) 10px 10px 100px inset;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+section{
+    box-shadow:rgb(248, 181, 57) 1px 1px 70px inset;
+    margin: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px ;
+    display: flex;
+    justify-content: center;
+   
+}
+.displaySec{
+    min-height: 400px;
+}
+
+button{
+    background: linear-gradient(rgb(215, 239, 254)  , rgb(18, 105, 244) 60% );
+    border: 1px solid #00f;
+    padding: 10px;
+    width: 240px;
+    margin: 10px 30px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    transition: all 1s;
+}
+
+button:hover{
+    transform: scale(1.2) skew(10deg);
+}
+.details{
+    border: 2px solid blue;
+    background: radial-gradient(ellipse, rgba(69, 247, 194, 0.5) 50%,rgba(38, 0, 255, 0.8));
+    border-radius: 50px;
+    padding: 20px;
+    width: 70%;
+    margin: 25px auto;
+    text-align: center;
+    
+}
+
+.details:active{
+    transform: scale(1.1);
+    background: radial-gradient(ellipse, rgb(215, 239, 254)  , rgb(18, 105, 244) );
+
+}
+p{
+    font-weight: bold;    
+    font-size: 1.5em;
+    margin: 0;
+}
+input{
+    font-weight: bold;    
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: lightblue;
+    width: 80%;
+    outline: none;
+    border: 2px solid #ccc;
+}
+
+.map{
+    box-shadow: rgb(160, 221, 242) 5px 5px 50px, rgb(160, 221, 242) -10px -10px 50px;
+    border: 5px solid darkorchid;
+    border-radius: 30px;
+    margin :50px;
+    width: 100%;
+    height: 50vh;
+}
+
+
+
+
+

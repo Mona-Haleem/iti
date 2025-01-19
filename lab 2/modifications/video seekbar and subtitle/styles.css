@@ -1,0 +1,60 @@
+section {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#mainwrapper {
+    width: 90vw;
+    height: 80vh;
+    margin: 10px auto;
+    display: flex;
+}
+
+    #mainwrapper > section {
+        width: 200px;
+        margin: 20px;
+    }
+
+#videowrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+details {
+    padding: 5px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+    details:nth-child(odd) {
+        background-color: lightyellow;
+    }
+
+    details:nth-child(even) {
+        background-color: lightblue;
+    }
+
+input[type=button] {
+    width: 70px;
+}
+
+    input[type=button]:focus {
+        font-weight: bold;
+        background-color: lightpink;
+    }
+
+summary {
+    margin-bottom: 5px;
+}
+video{
+    height:200px ;
+}
+
+video::cue{
+    display: block;
+    font-size: 2em;
+    background-color: black;
+    color: white;
+}

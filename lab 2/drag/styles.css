@@ -1,0 +1,41 @@
+main{
+    padding: 0px;
+    margin: 40px ;
+    box-shadow:rgb(248, 137, 27) 10px 10px 100px inset;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+section{
+    box-shadow:rgb(248, 181, 57) 1px 1px 70px inset;
+    margin: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px 25px ;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dropSec{
+    min-height: 150px;
+    justify-content:flex-start !important;
+}
+
+.dropSec img{
+    margin: 25px ;
+}
+
+img{
+    border: 5px solid rgb(18, 210, 210) ;
+    width: 150px;
+    height: 150px;
+    margin: 25px 10px;
+   
+    transition: all 3s;
+}
+
+img:hover{
+    transform: scale(1.5) rotate(360deg);
+}
+
