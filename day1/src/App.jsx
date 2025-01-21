@@ -12,34 +12,37 @@ function TodoApp() {
               id:v4(),
               name: newTask,
               completed: false
-          }].sort((a,b)=>a.completed -b.completed));
+          }]);
       }
   }
 
-  const deleteTask = (x) => {
-      setTasks(tasks.filter((task) => task.id !== x));
+  const deleteTask = (taskId) => {
+      setTasks(tasks.filter((task) => task.id !== taskId));
   }
 
   const deleteCompleted = () => {
     setTasks(tasks.filter((task) => task.completed === false));
   }
 
-  const updateTaskState = (x) => {
+  const updateTaskState = (taskId) => {
     setTasks(
-              tasks
-                .map((task) =>(task.id === x)?{...task,completed:!task.completed}:task)
-                .sort((a,b)=>a.completed -b.completed)
+              tasks.map((task) =>
+                (task.id === taskId)?
+                {...task,completed:!task.completed}:
+                task
+                )
             );
   }
 
   const editTask = (e,taskId) => {
     if (e.target.value.trim() !== '') {
-      let newTask = {...tasks.find(task => task.id == taskId ) , name : e.target.value};
-      setTasks([...tasks
-              .map((task) => (task.id != taskId )?task:newTask)]
-              .sort((a,b)=>a.completed -b.completed)
-            );
-  }
+      setTasks(tasks.map((task) =>
+                    (task.id === taskId)?
+                    {...task,name:e.target.value}:
+                    task
+                  )
+              );
+    }
   }
 
   return (

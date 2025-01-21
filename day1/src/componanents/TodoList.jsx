@@ -3,7 +3,8 @@ import TodoItem from "./TodoItem.jsx";
 
 const TodoList = ({tasks,updateTaskState,deleteTask,deleteCompleted,editTask}) => {  
     return <ul>
-                {tasks.map((task) => (<TodoItem
+                {tasks.sort((a,b)=>a.completed -b.completed)
+                .map((task) => (<TodoItem
                                         key={task.id}
                                         task={task}
                                         updateTaskState={updateTaskState}
