@@ -1,0 +1,511 @@
+@import url(https://db.onlinewebfonts.com/c/fdebcd0c20c9955d76511b720d9932bb?family=MaryTodd+W00+Black);
+:root{
+ --main:rgb(2,8,9);
+ --accent:rgb(243,242,234);
+ --complement:rgb(142,64,66);
+ --highlight:rgb(4,89,77)
+
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient( to bottom, var(--main) 475px,var(--accent) 475px);
+  background-repeat: no-repeat;
+  background-color:var(--accent) ;
+  
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "MaryTodd W00 Black";
+  font-size: 16px;
+  
+}
+
+main{
+  width:65%;
+  height: 1000px;
+  margin: 50px auto;
+}
+
+/************************************************/
+
+main > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  
+}
+
+main > header h1{
+  font-weight: 400;
+  font-size: 3.25em;
+}
+
+main > header div{
+  width: 60%;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+main > header input{
+  background-color: var(--highlight);
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-family: "MaryTodd W00";
+  padding: 11px 20px;
+  width: calc(100% - 110px);
+}
+
+main > header button{
+  color: white;
+  background-color: var(--complement);
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 1.2em;
+  padding: 10px 25px;
+  font-family: "MaryTodd W00 Black";
+  
+}
+/**********************************************************************************/
+nav{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  color: #fdfdfd;
+  background: rgb(26,26,26);
+  padding: 0 10px;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+}
+
+nav > div{
+  width: calc(100% - 120px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav .active{
+  background-color: var(--highlight);
+}
+
+nav p{
+  font-weight: 400;
+  padding: 15px 20px;
+}
+
+nav .weather{
+  font-family: "MaryToddW00-Regular";
+  position: absolute;
+  right: 20px ;
+  top: 2px;
+  padding-right:0 ;
+}
+
+.weather img{
+  position: relative;
+  top: 2px;
+}
+/**********************************************************/
+.topNews{
+  position: relative;
+  background: rgb(253,253,253);
+  padding: 20px;
+  height: 500px;
+  width: 100%;
+}
+
+main > div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.trendingNews{
+  height: fit-content;
+  width: 35%;
+  padding: 20px;
+  background-color: #fdfdfd;
+}
+
+.trendingNews > header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding-bottom: 20px;
+}
+
+.trendingNews > header >h3{
+  color: #1A1A1A;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  
+}
+
+.trendingNews > header >button{
+   background-color: #1A1A1A;
+   color: #fdfdfd;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 400;
+   font-size: 0.7em;
+   padding: 5px;
+   border-radius: 3px;
+   width: 85px;
+  display: inline-block;
+}
+
+.latestNews{
+  padding: 20px;
+  padding-left: 0;
+  width: 65%;
+  text-align: center;
+}
+
+.latestNews > header >h3{
+  color: #1A1A1A;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 2em;
+  padding: 0 30px 30px ;
+}
+
+.latestNews > header >div{
+  height: 2px;
+  width: 65%;
+  background-color: #1A1A1A;
+  vertical-align: super;
+  display: inline-block;
+}
+
+.latestNews > div{
+  column-count: 2;
+  text-align: start;
+}
+
+.latestNews button{
+  background-color: var(--highlight);
+  font-family: "MaryTodd W00 Regular";
+  font-weight: 400;
+  color: #fdfdfd;
+  font-size: 1.25em;
+  padding: 12px 26px;
+  border: none;
+  
+}
+
+/**********************************************************/
+.card{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.25em;
+}
+
+.description{
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1em;
+  color: var(--highlight)
+}
+
+.publish{
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 0.625em;
+  color: #676767;
+  z-index: 12;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+}
+
+.publish p{
+  margin-right: 25px;
+ } 
+/****************************************/
+.imgCard{
+  padding: 0 !important;
+}
+
+.imgCard::before {
+  content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(26, 26, 26, 1), rgba(0,0,0,0)); 
+    z-index: 10;
+}
+
+.imgCard img{
+  height: 100%;
+  width: 100%;
+}
+
+.imgCard h1{
+  position: absolute;
+  bottom: 30px;
+  font-weight: 400;
+  color: white;
+  width:calc(100% - 50px);
+  padding : 20px;
+  z-index: 11;
+}
+
+.imgCard .publish{
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: white;
+ 
+}
+/*********************************************/
+.fullCard img{
+  display: inline-block;
+  width: 30% ;
+  height: 100%;
+
+}
+
+.fullCard > div{
+  display: inline-block;
+  width: 70% ;
+  height: 100%;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.fullCard h1{
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.fullCard .description{
+  font-size: 0.625em;
+}
+
+.fullCard .publish{
+  width: 70%;
+  margin-right: 0;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+} 
+
+/********************************************/
+.descriptionCard > div{
+  border-bottom: 2px solid rgb(241,240,240);
+  margin-bottom: 10px
+}
+/*******************************************/
+
+.latestNews .card{
+  height: 340px;
+  padding: 10px;
+  margin-bottom: 15px;
+
+}
+
+.latestNews .descriptionCard{
+  background-color: white;
+  padding: 15px;
+}
+
+/**************************************************/
+.trendingNews .card{
+  height: 170px;
+  padding: 20px 0;
+  border-top: 2px solid rgb(241,240,240);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/**********************************************************/
+.topNews .card .publish{ 
+  display: none;
+} 
+/**********************************************************/
+.topNews .card:first-child{
+  width: 50%;
+  height: 335px;
+}
+
+
+.topNews .card:first-child .publish{ 
+  display: flex !important;
+} 
+
+
+
+/**********************************************************/
+ .topNews .card:nth-child(2){
+    width: 50%;
+    height: 100px;
+    margin-top: 20px;
+    position: absolute; 
+    bottom: 20px;
+    left: 0;
+}
+
+.topNews .card:nth-child(2) h1{ 
+  width: 85%;
+  font-size: 1em;
+}
+.topNews .card:nth-child(2) img{ 
+  position: absolute;
+  right: 0;
+}
+.topNews .card:nth-child(2) .description{ 
+  width: 85%;
+  font-size: 0.625em;
+  margin-top: 10px;
+}
+
+/*********************************************************/
+.topNews .card:nth-child(3){
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(26, 26, 26);
+  padding: 0 20px 20px;
+  width: calc(50% - 20px) ;
+  height: 261px;
+}
+
+ .topNews .card:nth-child(3)::before {
+  content: ''; 
+  position: absolute; 
+  top: 0;
+  width: 55%;
+  height: 100%;
+  right: 0;
+  padding: 0 20px 20px;
+
+  background: linear-gradient(to top, rgba(26, 26, 26, 1), rgba(0,0,0,0));
+  z-index: 10; 
+}
+
+.topNews .card:nth-child(3) img{
+  position: absolute;
+  width: 55%;
+  padding: 0 20px 20px;
+  height: 100%;
+  right: 0px;
+}
+
+
+.topNews .card:nth-child(3) h1{
+  position: absolute;
+  width: 50%;
+  right: 10px;
+  color: white;
+  bottom: 0;
+  z-index: 10;
+  padding: 20px;
+  font-size: 1.25em;
+}
+
+.topNews .card:nth-child(3) .description{
+  color: white;
+  padding: 20px;
+  font-size: 1em;
+  width: 60%;
+}
+
+/*********************************************************/
+ .topNews .card:nth-child(4){
+  width: 15%;
+  height: 185px;
+  position: absolute;
+  bottom: 20px;
+  left : calc(50% + 20px);
+}
+
+.topNews .card:nth-child(4)::before {
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.1)); 
+}
+
+.topNews .card:nth-child(4) h1 {
+  top:0;
+  left: 0;
+  width: calc( 100% - 20px);
+  height: 60px;
+  overflow: hidden;
+}
+
+
+/*********************************************************/
+.topNews .card:nth-child(5) .publish{ 
+  display: flex !important;
+} 
+ .topNews .card:nth-child(5){
+  width: calc(35% - 60px);
+  height: 185px ;
+  position: absolute;
+  bottom: 20px;
+  right :20px;
+  border-left: 2px solid rgb(241,241,240);
+  padding-left: 20px;
+
+}
+/***********************************************************************/
+
+
+@media screen and (max-width:992px){
+  main{
+    width: 100%;
+  }
+  main > header{
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (max-width:768px){
+  nav p{
+    width: 50%;
+    text-align: center;
+    position: relative;
+  }
+  nav > div{
+    width: 100%;
+  }
+
+  .weather, .topNews{
+    display: none;
+  }
+
+  main > div{
+    flex-direction: column;
+  }
+
+  .latestNews{
+    
+    width: 100%;
+  }
+
+  .trendingNews{
+    width: 100%;
+  }
+ 
+}
