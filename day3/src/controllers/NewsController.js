@@ -5,7 +5,6 @@ class NewsController {
     static async getLatestNews(params={}) { 
         try {
             let queryParams= NewsController.formatParams(params)
-            console.log(`https://newsapi.org/v2/top-headlines?${queryParams}apiKey=060af38eb9694725b90eecf15848a83f`)
             const response = await axios.get(`https://newsapi.org/v2/top-headlines?${queryParams}apiKey=a65e7a21ed22446cb230ed62d824319d`);
             return response.data.articles.map( news => new NewsModel(news));
         } catch (err) {
