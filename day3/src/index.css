@@ -1,5 +1,6 @@
 @import url(https://db.onlinewebfonts.com/c/fdebcd0c20c9955d76511b720d9932bb?family=MaryTodd+W00+Black);
-:root{
+@import url(https://db.onlinewebfonts.com/c/57de0e33a644cc8501a1835d273b75dd?family=MaryTodd+W00+Regular);
+@import url(https://db.onlinewebfonts.com/c/e3b581c40918633e25e979b8600f038c?family=MaryTodd+W00+Light);:root{
  --main:rgb(2,8,9);
  --accent:rgb(243,242,234);
  --complement:rgb(142,64,66);
@@ -13,7 +14,8 @@
 }
 
 body{
-  background-image: linear-gradient( to bottom, var(--main) 475px,var(--accent) 475px);
+  background-image: linear-gradient( to bottom, var(--main) 475px,var(--accent) 475px),
+                    linear-gradient( to top, var(--main) -265px,var(--accent) -265px);
   background-repeat: no-repeat;
   background-color:var(--accent) ;
   
@@ -26,7 +28,6 @@ body{
 
 main{
   width:65%;
-  height: 1000px;
   margin: 50px auto;
 }
 
@@ -40,7 +41,7 @@ main > header {
   
 }
 
-main > header h1{
+main > header h1, footer h1{
   font-weight: 400;
   font-size: 3.25em;
 }
@@ -72,6 +73,49 @@ main > header button{
   padding: 10px 25px;
   font-family: "MaryTodd W00 Black";
   
+}
+/************************************************/
+footer{
+  padding: 50px  17.5%;
+  height:265px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main);
+  margin-top:150px;
+  color: #fdfdfd ;
+} 
+
+.footerLinks{
+  
+  text-align: center;
+
+}
+
+.footerLinks > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footerLinks  p{
+  font-family: "MaryTodd W00 Light";
+  font-weight: 400;
+  font-size: 1em;
+  margin:0 20px 10px;
+
+}
+
+.categories p{
+  font-family: "MaryTodd W00 Black";
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 20px 10px;
+}
+
+.categories{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 /**********************************************************************************/
 nav{
