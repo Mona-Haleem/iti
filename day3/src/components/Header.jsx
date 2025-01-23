@@ -1,12 +1,12 @@
 import { memo } from "react";
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({setKeywords}) => {
   
     return (
       <header>
         <h1>NEWSLETTER</h1>
-        <Search/>
+        <Search setKeywords={setKeywords} />
       </header>
     );
 }

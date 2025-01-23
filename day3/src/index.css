@@ -14,11 +14,9 @@
 }
 
 body{
-  background-image: linear-gradient( to bottom, var(--main) 475px,var(--accent) 475px),
-                    linear-gradient( to top, var(--main) -265px,var(--accent) -265px);
+  background-image: linear-gradient( to bottom, var(--main) 475px,var(--accent) 475px);
   background-repeat: no-repeat;
-  background-color:var(--accent) ;
-  
+  background-color:var(--accent) ; 
   width: 100vw;
   overflow-x: hidden;
   font-family: "MaryTodd W00 Black";

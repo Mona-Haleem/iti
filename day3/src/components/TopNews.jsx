@@ -5,7 +5,7 @@ import DescriptionCard from "./DescriptionCard";
 import ImageCard from "./ImageCard";
 
 
-const TopNews = () => {
+const TopNews = ({category}) => {
 
     let [topNews , setNews] = useState([]);
     let [error , setError] = useState([]);
@@ -13,18 +13,18 @@ const TopNews = () => {
 
     const fetchNews =useCallback(async() => {
             try {
-                let news = await NewsController.getLatestNews({country:'us',category:'business',pageSize:5});
-                setNews(topNews = news);
+                let news = await NewsController.getLatestNews({country:'us',category:category});
+                setNews(topNews = news.slice(0,5));
             } catch (e) {
                 console.log(e);     
                 setError(error=e);
             }
             console.log(topNews);       
-    },[])
+    },[category])
 
     useEffect(()=>{ 
         fetchNews();
-    },[])
+    },[category])
 
     let appliedCalsses = ["imgCard","fullCard","fullCard","imgCard","descriptionCard"] 
 

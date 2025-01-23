@@ -1,11 +1,18 @@
-import { memo } from "react";
+import { memo, useCallback, useRef } from "react";
 
-const Search = () => {
-  
+const Search = ({setKeywords}) => {
+    const searchInput= useRef(null);
+
+    const searchKeywords = useCallback(()=>{
+      if (searchInput.current)
+        setKeywords(encodeURIComponent(searchInput.current.value.trim()));
+        searchInput.current.value ='';
+    },[])
+
     return (
       <div>
-        <input placeholder="Search for headlines"></input>
-        <button>SEARCH</button>  
+        <input ref={searchInput} placeholder="Search for headlines"></input>
+        <button onClick={searchKeywords}>SEARCH</button>  
       </div>
     );
 }

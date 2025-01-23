@@ -3,20 +3,21 @@ import NewsController from "../controllers/NewsController";
 import DescriptionCard from "./DescriptionCard";
 import ImageCard from "./ImageCard";
 
-const LatestNews = () => {
+const LatestNews = ({category, keywords}) => {
   let [topNews , setNews] = useState([]);
   let [page , setpage] = useState(1);
 
   let [error , setError] = useState([]);
 
-
+  console.log(keywords);
   const fetchNews = useCallback(async(page=1,query) => {
           try {
-              let news = await NewsController.getLatestNews({country:'us',category:'general',page:page,...query});
+            console.log(category)
+              let news = await NewsController.getLatestNews({country:'us',page:page,...query});
               if (page == 1)
                 setNews(topNews = news.slice(0,8));
               else
-                setNews(topNews = [...topNews,...news]);
+                setNews(topNews = [...topNews,...news.slice(0,8)]);
           } catch (e) {
               console.log(e);     
               setError(error=e);
@@ -26,8 +27,8 @@ const LatestNews = () => {
 
   
   useEffect(()=>{ 
-      fetchNews(page);
-  },[page])
+      fetchNews(page,{category:category , q:keywords});
+  },[page,category,keywords])
 
   return (
     <section className="latestNews">
