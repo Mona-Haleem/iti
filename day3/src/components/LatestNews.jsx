@@ -10,11 +10,11 @@ const LatestNews = () => {
   let [error , setError] = useState([]);
 
 
-  const fetchNews = useCallback(async(page=1) => {
+  const fetchNews = useCallback(async(page=1,query) => {
           try {
-              let news = await NewsController.getLatestNews({country:'us',pageSize:9,category:'general',page:page});
+              let news = await NewsController.getLatestNews({country:'us',category:'general',page:page,...query});
               if (page == 1)
-                setNews(topNews = news);
+                setNews(topNews = news.slice(0,8));
               else
                 setNews(topNews = [...topNews,...news]);
           } catch (e) {
@@ -37,7 +37,7 @@ const LatestNews = () => {
           </header>
           <div>
             {topNews.map((news,i) =>
-                        ( i%2  == 0 || i == topNews.length - 1)?
+                        ( (i - 1) % 4 == 0 || i % 4 == 0 )?
                         <ImageCard key={news.id} newsData={news}/>:
                         <DescriptionCard key={news.id} newsData={news} />
                     

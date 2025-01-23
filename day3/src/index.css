@@ -232,7 +232,9 @@ main > div{
 }
 
 .latestNews > div{
-  column-count: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   text-align: start;
 }
 
@@ -244,6 +246,7 @@ main > div{
   font-size: 1.25em;
   padding: 12px 26px;
   border: none;
+  margin-top: 20px;
   
 }
 
@@ -364,7 +367,6 @@ main > div{
 .latestNews .card{
   height: 340px;
   padding: 10px;
-  margin-bottom: 15px;
 
 }
 
