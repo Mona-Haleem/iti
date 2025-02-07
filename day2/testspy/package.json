@@ -1,0 +1,16 @@
+{
+  "name": "testspy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jasmine": "^5.5.0",
+    "nodemon": "^3.1.9"
+  }
+}
