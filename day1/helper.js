@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { title } = require("process");
+const process = require("process");
 const FILE_PATH = process.env.FILE_PATH || './db.json'
 
 function createFileIfNotExist(){
@@ -18,7 +18,7 @@ function formatParams(params){
 
 function addTodo(params){
 
-    if(!("title" in params || "body"in params)){
+    if(!("title" in params )){
         console.log("please provide the body or the title as such: 'title=title body=body'");
         return;
     }
@@ -27,7 +27,7 @@ function addTodo(params){
     const id = todoList.length ? todoList[todoList.length-1].id + 1 : 1;
     todoList.push( {
         id:id,
-        title:params.title || '',
+        title:params.title,
         body:params.body || '',        
         checked:false
     })
