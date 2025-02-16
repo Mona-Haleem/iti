@@ -1,16 +1,15 @@
-import React, { useContext, useState } from "react";
-//import ThemeContext from "../../contexts/ThemeContext";
+import React, { memo } from "react";
 import {  NavLink } from "react-router-dom";
-import routes from "./routes";
+import routes from "./routes.js";
 
 const Navbar = () => {
     return (
-        <ul>
+        <ul className="m-0">
             {routes.map((route) => (
-            <li key={route.href}>
+            <li key={route.href} >
                 <NavLink
                     to={route.href}
-                    className={({ isActive }) => isActive && "text-primary"}
+                    className={({ isActive }) => isActive ? "text-light bg-secondary link" : "text-secondary link"}
                 >
                     {route.label}
                 </NavLink>

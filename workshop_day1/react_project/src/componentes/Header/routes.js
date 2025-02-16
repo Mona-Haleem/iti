@@ -3,7 +3,7 @@ const routes = [
     { href: "/products", label: "Products" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
-    { href: "/profile", label: "profile" },
+    { href: "/account", label: "account" },
   ];
   
-  export default routes;
+export default routes;
