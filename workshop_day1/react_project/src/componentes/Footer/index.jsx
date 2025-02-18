@@ -1,6 +1,6 @@
 import { memo, useContext } from "react";
 import ThemeContext from "../../contexts/ThemeContext.jsx";
-import styles from './footer.module.css';
+import styles from './Footer.module.css';
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
