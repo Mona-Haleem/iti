@@ -1,31 +1,36 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+import { store } from './redux/store.js';
+
+import { Provider } from 'react-redux';
+
+import {ToggleThemeProvider} from './contexts/ThemeContext.jsx';
+import {LanguageProvider} from './contexts/LanguageContext.jsx';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Layout from './componentes/Layout';
-import {ThemeProvider} from './contexts/ThemeContext.jsx';
-import {LanguageProvider} from './contexts/LanguageContext.jsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Account from './pages/Account.jsx';
 import Contact from './pages/Contact.jsx';
 import Products from './pages/Products.jsx';
 import About from './pages/About.jsx';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ProductDetails from './pages/ProductDetails.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Cart from './pages/Cart.jsx';
-import { Provider } from 'react-redux';
-import { store } from './redux/store.js';
 
 
 function App() {
-
   const queryClient = new QueryClient();
-
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
+        <ToggleThemeProvider>
             <LanguageProvider>
               <BrowserRouter>
                 <Layout >
@@ -42,7 +47,7 @@ function App() {
                 </Layout>
               </BrowserRouter> 
             </LanguageProvider>
-        </ThemeProvider>
+        </ToggleThemeProvider>
       </QueryClientProvider>
     </Provider>
 

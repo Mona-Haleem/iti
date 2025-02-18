@@ -1,7 +1,9 @@
 import {memo, useContext} from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
 import ThemeContext from "../../contexts/ThemeContext";
 import LanguageContext from "../../contexts/LanguageContext";
+import { IconButton } from "@mui/material";
+import { NightsStay, WbSunny } from "@mui/icons-material";
+import LanguageIcon from '@mui/icons-material/Language';
 
 const ContextToggler = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -9,26 +11,21 @@ const ContextToggler = () => {
   
   const toggleTheme = () => {
     setTheme(theme == "light" ? "dark" : "light");
+    console.log(theme)
   };
   const toggleLanguageDirection = () => {
     setLanguage((dir) => dir == "ltr" ? "rtl" :"ltr");
   };
 
    return (
-        <ButtonGroup size="sm" vertical >
-            <Button
-            onClick={toggleTheme}
-            variant={theme == "dark" ? "outline-light" : "outline-primary"}
-            >
-            Toggle theme
-            </Button>
-            <Button
-            onClick={toggleLanguageDirection}
-            variant={theme == "dark" ? "outline-light" : "outline-primary"}
-            >
-            Toggle Language
-            </Button>
-        </ButtonGroup>
+        <>
+        <IconButton onClick={toggleTheme} color="inherit">
+            {theme == "dark" ? <WbSunny /> : <NightsStay />}
+          </IconButton>
+          <IconButton onClick={toggleLanguageDirection} color="inherit">
+            <LanguageIcon  />
+          </IconButton>
+        </>
     
   );
 };

@@ -2,22 +2,27 @@ import React, { memo, useContext } from "react";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-import ThemeContext from "../../contexts/ThemeContext.jsx";
 import LanguageContext from "../../contexts/LanguageContext.jsx";
+import { useTheme } from "@emotion/react";
+import { Box } from "@mui/material";
 
 const Layout = ({children}) => {
-  const { theme } = useContext(ThemeContext);
   const {Language} = useContext(LanguageContext);
+  const theme = useTheme(); 
+  const currStyle = {
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.text.primary,
+  };
 
   return (
-    <div className="container-fluid p-0 layout-container" dir={Language}>
+    <div className="flex flex-col min-h-screen" dir={Language}>
       <Header/>
-      <div className="row m-0"> 
-        <main className={`main col ${theme == 'dark'? 'bg-dark text-light' :'bg-white'}`}>
+      <Box sx={currStyle} className="flex flex-1"> 
+        <Sidebar/>
+        <main >
           {children}
         </main>
-        <Sidebar/>
-      </div>
+      </Box>
       <Footer></Footer>
     </div>
   );

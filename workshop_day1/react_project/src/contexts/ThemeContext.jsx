@@ -1,14 +1,18 @@
 import { createContext, useState } from "react";
+import {ThemeProvider} from '@mui/material/styles';
+import { lightTheme, darkTheme } from '../utils/theme.js';
 
-const ThemeContext = createContext();
+const ToggleThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
+export const ToggleThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ToggleThemeContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
+        {children}
+      </ThemeProvider>
+    </ToggleThemeContext.Provider>
   );
 };
 
-export default ThemeContext;
+export default ToggleThemeContext;

@@ -1,12 +1,18 @@
 import { memo, useContext } from "react";
-import ThemeContext from "../../contexts/ThemeContext";
+import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 const Sidebar = () => {
-  const { theme } = useContext(ThemeContext);
-
+  const theme = useTheme(); 
+  const currStyle = {
+    BorderColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+  };
   return (
-    <aside className={`col-3 ${theme == 'dark'? 'bg-secondary' :'bg-light'}`} >
-        sideBar
+    <aside >
+        <Box sx={currStyle}>
+          sideBar
+        </Box>
     </aside>
   );
 };
