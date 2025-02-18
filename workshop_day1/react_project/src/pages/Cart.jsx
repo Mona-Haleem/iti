@@ -25,7 +25,7 @@ const Cart = () => {
         </thead>
         <tbody>
           <tr>
-            <td>{cart.totalPrice}</td>
+            <td>{cart.totalPrice.toFixed(2)}</td>
             <td>{cart.totalQuantity}</td>
           </tr>
         </tbody>

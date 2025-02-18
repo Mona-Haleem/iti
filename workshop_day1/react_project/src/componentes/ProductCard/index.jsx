@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/slices/cartSlice";
+import { addToCart, removeFromCart, removeAllFromCart } from "../../redux/slices/cartSlice";
 import { ButtonGroup, Button } from "react-bootstrap";
 import { addToFavorite, removeFromFavorite } from "../../redux/slices/favProductSlice";
 import { useSelector } from "react-redux";
@@ -21,10 +21,13 @@ const ProductCard = ({ product, isCartItem = false }) => {
     navigate("/cart");
   };
 
-  const handleRemoveFromCart = (event) => {
+  const handleRemoveFromCart = (event,all=false) => {
     event.stopPropagation();
     event.preventDefault();
-    dispatch(removeFromCart(product));
+    if(all)
+      dispatch(removeAllFromCart(product));
+    else
+      dispatch(removeFromCart(product));
   };
 
   const handelAddtoFavourite = (event) =>{
@@ -59,7 +62,7 @@ const ProductCard = ({ product, isCartItem = false }) => {
           }
           <div className="d-flex justify-content-between">
             {isCartItem ? (
-              <button className="btn btn-primary" onClick={handleRemoveFromCart}>
+              <button className="btn btn-primary" onClick={(e) =>handleRemoveFromCart(e,true)}>
                 Remove from Cart
               </button>
             ) : (
