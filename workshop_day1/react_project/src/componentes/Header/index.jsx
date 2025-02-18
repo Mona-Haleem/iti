@@ -1,6 +1,6 @@
 import {memo, useContext} from "react";
 import Navbar from "./Navbar";
-import styles from './header.module.css';
+import styles from './Header.module.css';
 import ThemeContext from "../../contexts/ThemeContext";
 import ContextToggler from "./ContextToggler";
 
