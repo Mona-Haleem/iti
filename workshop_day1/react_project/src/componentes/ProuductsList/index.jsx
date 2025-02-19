@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductWrapper from "../ProductWrapper";
 import ThemeContext from "../../contexts/ThemeContext";
-import { Spinner } from "react-bootstrap";
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../../utils/axiosInstance";
 import ProductCard from "../ProductCard";
 import { Link } from "react-router-dom";
+import { FaSpinner } from "react-icons/fa";
 
 
 const ProductsList = () => {
@@ -38,7 +38,7 @@ const ProductsList = () => {
       </div>
       {isLoading && (
               <div className="d-flex justify-content-center mt-5 align-items-center">
-                <Spinner animation="border" />
+                <FaSpinner animation="border" />
               </div>
             )}
             {error ? (

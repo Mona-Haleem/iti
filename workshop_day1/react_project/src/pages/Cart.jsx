@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "../componentes/ProductCard";
+import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -16,20 +17,20 @@ const Cart = () => {
           ))}
         </div>
       )}
-      <table className="table">
-        <thead>
-          <tr>
-            <td>Total price</td>
-            <td>Total count</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{cart.totalPrice.toFixed(2)}</td>
-            <td>{cart.totalQuantity}</td>
-          </tr>
-        </tbody>
-      </table>
+      <Table className="table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Total price</TableCell>
+            <TableCell>Total count</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>{cart.totalPrice.toFixed(2)}</TableCell>
+            <TableCell>{cart.totalQuantity}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </>
   );
 };

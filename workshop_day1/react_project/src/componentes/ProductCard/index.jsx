@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart, removeAllFromCart } from "../../redux/slices/cartSlice";
-import { ButtonGroup, Button } from "react-bootstrap";
 import { addToFavorite, removeFromFavorite } from "../../redux/slices/favProductSlice";
 import { useSelector } from "react-redux";
 import { FaStar } from "react-icons/fa";
+import { Box, Button, ButtonGroup, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 
 const ProductCard = ({ product, isCartItem = false }) => {
   const dispatch = useDispatch();
@@ -45,37 +45,48 @@ const ProductCard = ({ product, isCartItem = false }) => {
 
   return (
     <Link to={`/products/${product.id}`}>
-      <div className="card mb-4" style={{ maxWidth: "18rem" }}>
-        <img src={product.image} alt={product.name} className="card-img-top object-fit-cover border border-bottom" style={{height:"250px"}} />
-        <div className="card-body">
-          <h5 className="card-title">{product.name}</h5>
-          <p className="card-text">Price: {product.price}</p>
+      <Card>
+        <CardMedia 
+           image={product.image} 
+           alt={product.name} 
+           className="card-img" 
+           component="img"
+        />
+        <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{height:"70px" ,overflow:"hidden"}}>
+        {product.name || product.title}
+        </Typography>
+        <Typography component="p" sx={{ color: 'text.secondary' }}>
+          Price: {product.price}
+        </Typography>
+
+          <p className="card-text"></p>
           {isCartItem && 
-          <div className="my-3">
+          <div className="my-3 mx-auto">
             <p className="card-text"> Quantity</p>
-            <ButtonGroup size="sm" className="w-100 ">
-              <Button onClick={handleAddToCart}>+</Button>
-              <p className="btn w-50">{product.quantity}</p>
-              <Button  onClick={handleRemoveFromCart}>-</Button>
+            <ButtonGroup size="sm" className="my-2 w-full ">
+              <Button variant="contained" onClick={handleAddToCart}>+</Button>
+              <Button disabled ><p className="w-50">{product.quantity}</p></Button>
+              <Button variant="contained" onClick={handleRemoveFromCart}>-</Button>
             </ButtonGroup>
           </div>
           }
-          <div className="d-flex justify-content-between">
+          <CardActions className="flex justify-between">
             {isCartItem ? (
-              <button className="btn btn-primary" onClick={(e) =>handleRemoveFromCart(e,true)}>
+              <Button variant="contained"  onClick={(e) =>handleRemoveFromCart(e,true)}>
                 Remove from Cart
-              </button>
+              </Button>
             ) : (
-              <button className="btn btn-primary" onClick={handleAddToCart}>
+              <Button variant="contained" onClick={handleAddToCart}>
                 Add to Cart
-              </button>
+              </Button>
             )}
             <FaStar color={isFav ? "gold" :"gray"} size={24} onClick={isFav ? handleRemoveFromFavourite:handelAddtoFavourite}/>
-          </div>
+          </CardActions>
 
-        </div>
-      </div>
-    </Link>
+          </CardContent>
+        </Card>
+      </Link>
   );
 };
 
