@@ -1,6 +1,6 @@
-import { Text, View } from 'react-native';
+import {  View } from 'react-native';
 import TodoList from './TodoList.jsx';
-import { styles } from '../styles.js';
+import { styles } from '../../styles.js';
 
 const DoneItems = () => {
   return (  

@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity } from 'react-native';
-import { styles } from '../styles';
+import { styles } from '../../styles';
 export default function FilterBtn({label,isActive}) {
  let btnStyle = styles.filterBtn;
  let txtStyle = styles.filterText;

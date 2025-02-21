@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, TextInput,  TouchableOpacity, View } from 'react-native';
-import { styles } from '../styles';
+import { styles } from '../../styles.js';
 import FilterBtn from './TextBtn.jsx';
 import TodoList from './TodoList.jsx';
 

@@ -1,7 +1,7 @@
 import { FlatList} from 'react-native';
 import { useState } from 'react';
 import ListItem from './ListItem';
-import data from '../src/Data';
+import data from '../Data';
 
 
 
