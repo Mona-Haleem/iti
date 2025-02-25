@@ -11,16 +11,14 @@ class ToDoListItem{
     }
 }
 class InProgressTodoItem extends ToDoListItem{
-    handle(context){
+    handle(){
         console.log(this.title,"STATE_IN_PROGRESS");
-        context.setState(new ReadyTodoItem(this.title));
     }
 }
 
 class ReadyTodoItem extends ToDoListItem{
-    handle(context){
+    handle(){
         console.log(this.title ,"STATE_READY_FOR_REVIEW");
-        context.setState(new DoneTodoItem(this.title));
     }
 }
 
@@ -30,7 +28,8 @@ class DoneTodoItem extends ToDoListItem{
     }
 }
 class Context{
-    constructor(title,state){
+  
+    constructor(title,state) {
         switch(state){
             case "ready":
                 this.state = new ReadyTodoItem(title);
@@ -42,9 +41,6 @@ class Context{
                 this.state = new InProgressTodoItem(title);
         }
     }
-    setState(state) {
-        this.state = state;
-    }
     request(){
         this.state.handle(this)
     }
@@ -52,13 +48,11 @@ class Context{
 
 
 let newTodo = new Context("item1")
-newTodo.request(this)
-newTodo.request(this)
-newTodo.request(this)
+newTodo.request()
+
 
 let readyTodo = new Context("item2","ready")
-readyTodo.request(this)
-readyTodo.request(this)
+readyTodo.request()
 
 let doneTodo = new Context("item3","done")
-doneTodo.request(this)
+doneTodo.request()

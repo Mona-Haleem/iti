@@ -27,8 +27,9 @@ class ContainerManger{
     }
 }
 class StockManger extends ContainerManger{
-    constructor(){
+    constructor(items){
         super('stock');
+        this.addItems(items)
     }
     getItem(item){
         const itemIndex = this.findItem(item);
@@ -61,14 +62,10 @@ class OrderManger{
 }
 
 class StoreFacade{
-    constructor(){
+    constructor(stockItems){
         this.cart = new CartManger();
-        this.stock = new StockManger();
+        this.stock = new StockManger(stockItems);
         this.order = new OrderManger();
-    }
-
-    launchStore(items){
-        this.stock.addItems(items)
     }
 
     orderItems(items){
@@ -93,8 +90,8 @@ class StoreFacade{
     }
 }
 
-let facade = new StoreFacade();
-facade.launchStore(['bananas','apples', 'kiwis','oranges','strawberries'])
+let facade = new StoreFacade(['bananas','apples', 'kiwis','oranges','strawberries']);
+
 facade.orderItems(['bananas','strawberries','avocado']);
 console.log('--------------------------')
 facade.orderItems(['milkshake','juice']);

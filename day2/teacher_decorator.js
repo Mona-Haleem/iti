@@ -15,6 +15,9 @@ class Teacher{
 class TeacherDecorator{
     constructor (Teacher,salary, nationality, street){
     this.Teacher = Teacher;
+    this.name = Teacher.name;
+    this.age = Teacher.age;
+    this.major = Teacher.major;
     this.salary = salary;
     this.nationality = nationality;
     this.street = street;

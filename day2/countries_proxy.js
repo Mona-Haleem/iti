@@ -33,6 +33,56 @@ let usa = countries.getCountry('united states')
 let egypt = countries.getCountry('egypt')
 
 
+console.log(egypt);   
+console.log(usa);     
+console.log(egy); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const CountryProxy = new Proxy({}, {
 //     cache: {},
 //     get(name) {
@@ -46,7 +96,3 @@ let egypt = countries.getCountry('egypt')
 // let egypt = CountryProxy['egypt'];
 // let usa = CountryProxy['united states'];
 // let egy = CountryProxy['egy'];
-
-console.log(egypt);   
-console.log(usa);     
-console.log(egy); 
