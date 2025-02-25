@@ -26,14 +26,14 @@ const ItemDetailEdit = ({todoItem,setEdit,setitem}) => {
   return (
     <View style={styles.ItemDetail}>
       <View style={styles.iconsContainer}>
-        <TextInput style={{width:"70%",backgroundColor:"#eee" ,borderRadius:5,padding:10,fontSize:15}} value={title} onChangeText={setTitle} />
+        <TextInput style={styles.editorInput} value={title} onChangeText={setTitle} />
           <View style={styles.iconsContainer}>
               <Icon name="check" size={25} onPress={handelEdit} />
               <Icon name="close" size={25} onPress={()=>setEdit(false)} />
           </View>
       </View>
       <View style={styles.dividerLine}/>
-      <TextInput style={{flex:1,width:"100%",backgroundColor:"#eee" ,borderRadius:5,padding:10,fontSize:15,justifyContent:"flex-start"}} value={desc} multiline={true} onChangeText={setDesc}/>
+      <TextInput style={[styles.editorInput,styles.editorTextarea]} value={desc} multiline={true} onChangeText={setDesc}/>
     </View>
   )
 }

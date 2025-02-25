@@ -122,5 +122,16 @@ export const styles = StyleSheet.create({
   detailDesc:{
     fontSize:15,
     lineHeight:30
+  },
+  editorInput:{
+    width:"70%",
+    backgroundColor:"#eee" ,
+    borderRadius:5,
+    padding:10,
+    fontSize:15
+  },
+  editorTextarea:{
+    flex:1,
+    width:"100%",
   }
 });
