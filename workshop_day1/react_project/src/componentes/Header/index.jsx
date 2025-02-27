@@ -1,4 +1,4 @@
-import {memo, useState} from "react";
+import {memo, useContext, useState} from "react";
 import ContextToggler from "./ContextToggler";
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -7,12 +7,13 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import NavLinksSmall from "./NavLinksSmall.jsx";
 import NavLinksLarge from "./NavLinksLarge.jsx";
+import { AuthContext } from "../../contexts/AuthContext.jsx";
 
 
 const Header = () => {
-
+  const {isAuthenticated} = useContext(AuthContext);
   const [menuOpen, setmenuOpen] = useState(false);
-
+  console.log(isAuthenticated)
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
   
@@ -25,12 +26,18 @@ const Header = () => {
     return (
       <AppBar position="static" >
         <Toolbar sx={{justifyContent:"space-between"}}>
-          <Typography variant="h6" sx={{marginRight: 2}}>E-Commerce</Typography>
-          {isSmall?<NavLinksSmall handleDrawerToggle={handleDrawerToggle} menuOpen={menuOpen}/>:<NavLinksLarge/>}
+          <Typography variant="h6" sx={{marginRight: 1}}>E-Commerce</Typography>
+          
+          {isAuthenticated && (
+                    isSmall?
+                    <NavLinksSmall 
+                      handleDrawerToggle={handleDrawerToggle} 
+                      menuOpen={menuOpen}/>:
+                    <NavLinksLarge/>)}
           <div className="flex">
             <UserIcon/>
             <ContextToggler/>
-              { isSmall && (
+              { (isAuthenticated && isSmall) && (
                   <IconButton onClick={handleDrawerToggle}  color="inherit">
                       <MenuIcon />
                   </IconButton>

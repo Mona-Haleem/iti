@@ -1,28 +1,35 @@
-import {memo, useState, } from "react";
+import {memo, useContext, useState, } from "react";
 import {  IconButton, Menu, MenuItem } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
+import { AuthContext } from "../../contexts/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const UserIcon = () => {
     const [anchorEl, setAnchorEl] = useState(null);
-
-    const handleMenu = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
+    const {logout,isAuthenticated} = useContext(AuthContext)
+    const navigate = useNavigate()
+    
+    const handleLogout = () => {
         setAnchorEl(null);
+        logout()
     };
+
+    const navToProfile = ()=>{
+        setAnchorEl(null);
+        navigate("/account")
+    }
+
     return (
      <div>
         <IconButton 
             aria-controls="menu-appbar"
             aria-haspopup="true"
-            onClick={handleMenu}
+            onClick={(e)=>isAuthenticated?setAnchorEl(e.currentTarget):navigate('/login')}
             color="inherit"
         >
             <AccountCircle />
         </IconButton>
-        <Menu
+        {isAuthenticated && <Menu
             id="menu-appbar"
             anchorEl={anchorEl}
             anchorOrigin={{
@@ -34,12 +41,20 @@ const UserIcon = () => {
                 vertical: 'top',
                 horizontal: 'right',
             }}
+            sx={{
+                '& .MuiPaper-root': {
+                  px: 2, 
+                }
+              }}
+           
             open={Boolean(anchorEl)}
-            onClose={handleClose}
-        >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-        </Menu>
+            onClose={() => setAnchorEl(null)}
+        >       
+       
+            <MenuItem  onClick={navToProfile}>Profile</MenuItem>
+            <MenuItem  onClick={handleLogout}>Logout</MenuItem>
+           
+        </Menu>}
     </div>
   );
 };

@@ -99,13 +99,74 @@
       "description": "Any description",
       "matrial": "wood",
       "quantity": 12
+    },
+    {
+      "id": "3daa",
+      "title": "trsy",
+      "price": 5,
+      "description": "hyfgh",
+      "image": "https://res.cloudinary.com/dsmofsy4p/image/upload/v1740664547/lsanbpi3vwtqbudvwnet.png",
+      "category": "miscellaneous",
+      "quantity": 3
+    },
+    {
+      "id": "6168",
+      "title": "gfh",
+      "price": 8,
+      "description": "fgf",
+      "image": "https://res.cloudinary.com/dsmofsy4p/image/upload/v1740666998/b0myi4j0nm2prriawwbi.png",
+      "category": "men's clothing",
+      "quantity": 4
     }
   ],
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "eslam@gmail.com"
+      "id": "ba46",
+      "firstName": "Mona",
+      "lastName": "Haleem",
+      "username": "MonaHaleem",
+      "email": "mm@gmail.com",
+      "password": "Asdf123*",
+      "phoneNumber": "01055791666",
+      "token": "llgygrsvrtq"
+    },
+    {
+      "id": "0111",
+      "firstName": "mona",
+      "lastName": "h",
+      "username": "mona2",
+      "email": "m2@gmail.com",
+      "password": "Mm123456*",
+      "phoneNumber": "01112158461",
+      "token": "cio9256xikw",
+      "img_url": "https://res.cloudinary.com/dsmofsy4p/image/upload/v1740667486/my8egolt7l3pplwutxwm.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+    {
+      "id": 2,
+      "name": "electronics",
+      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "jewelery",
+      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "women's clothing",
+      "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "miscellaneous",
+      "image": "https://i.imgur.com/BG8J0Fj.jpg"
     }
   ]
 }

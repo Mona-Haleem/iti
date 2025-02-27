@@ -5,7 +5,7 @@ import { lightTheme, darkTheme } from '../utils/theme.js';
 const ToggleThemeContext = createContext();
 
 export const ToggleThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   return (
     <ToggleThemeContext.Provider value={{ theme, setTheme }}>
       <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>

@@ -1,6 +1,7 @@
 import { memo, useContext } from "react";
 import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
+import ProductsFilter from "./ProductsFilter";
 
 const Sidebar = () => {
   const theme = useTheme(); 
@@ -11,7 +12,7 @@ const Sidebar = () => {
   return (
     <aside >
         <Box sx={currStyle}>
-          sideBar
+          <ProductsFilter/>
         </Box>
     </aside>
   );

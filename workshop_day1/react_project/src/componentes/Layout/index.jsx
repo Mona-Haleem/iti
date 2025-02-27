@@ -18,7 +18,6 @@ const Layout = ({children}) => {
     <div className="flex flex-col min-h-screen" dir={Language}>
       <Header/>
       <Box sx={currStyle} className="flex flex-1"> 
-        <Sidebar/>
         <main >
           {children}
         </main>

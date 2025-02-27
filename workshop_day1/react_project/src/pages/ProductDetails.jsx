@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
   if (error) return <Navigate to="/not-found" replace />;
 
-  return data && <ProductCard product={data} />;
+  return data && <ProductCard product={data} isDetailItem={true}/>;
 };
 
 export default ProductDetails;

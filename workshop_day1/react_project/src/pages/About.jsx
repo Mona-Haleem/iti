@@ -1,10 +1,12 @@
 import React from "react";
-import SocialInfo from "../componentes/About/SocialInfo";
+import AboutSection from "../componentes/About/AboutSection";
+import ContactForm from "../componentes/About/contactForm";
 
 const About = () => {
-  return <div>About
-    <SocialInfo></SocialInfo>
-  </div>;
+  return <>
+    <AboutSection/>
+    <ContactForm/>
+  </>;
 };
 
 export default About;

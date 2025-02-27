@@ -46,16 +46,16 @@ li > a{
 }
 
 footer > div{
-  min-height: 50px;
   padding: 10px;
   display: flex;
   align-items: center;
   background-color: #eaeaea;
   color:#7a90ff ;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 aside{
+  margin: 20px 0 0 10px;
   padding: 20px;
   width: 25%;
   max-width: 300px;
@@ -64,8 +64,9 @@ aside{
 
 aside > div{
   width: 100%;
-  border-right: 3px solid;
-  height: 80vh;
+  border: 1px solid;
+  border-radius: 25px;
+  padding:10px;
   background-color:rgba(255,255,255,0.1) ;
 
 }
@@ -75,15 +76,41 @@ main{
   padding: 20px;
 }
 
+.products-contianer{
+  width: 100%;
+}
+
 .MuiCard-root .card-img{
   height: 300px;
   object-fit: cover;
   
 }
+.MuiCard-root .detail-img{
+  max-height: 75vh; 
+  min-width: 300px;
+  object-fit: contain;
+}
+.scrollHContainer{
+    display: flex;
+    overflow-x: auto; 
+    gap: 16px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+
+
 
 @media screen and (max-width:992px) {
   aside{
     display: none;
   }
-  
+}
+
+
+@media screen and (max-width:756px) {
+  footer > div{
+    flex-direction: column;
+    gap: 30px;
+  }
 }

@@ -1,10 +1,14 @@
 import React from "react";
-// import { useLoaderData } from "react-router-dom";
+import Banner from "../componentes/Home/Banner";
+import { Box, Typography } from "@mui/material";
+import ProductsList from "../componentes/ProuductsList";
 
 const Home = () => {
-//   const data = useLoaderData();
-
-  return <div>Home</div>;
+  return <Box>
+    <Banner/>
+    <Typography variant="h3"> Featured Products </Typography>
+    <ProductsList horizentalScroll={true}/>
+  </Box>;
 };
 
 export default Home;

@@ -17,12 +17,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Layout from './componentes/Layout';
 import Home from './pages/Home.jsx';
 import Account from './pages/Account.jsx';
-import Contact from './pages/Contact.jsx';
+import Contact from './pages/Categories.jsx';
 import Products from './pages/Products.jsx';
 import About from './pages/About.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Cart from './pages/Cart.jsx';
+import Login from './pages/Login.jsx';
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import ProtectedRoute from './componentes/ProtectedRoute/index.jsx';
+import Categories from './pages/Categories.jsx';
+import Favourite from './pages/Favourite.jsx';
+import AddProduct from './componentes/AddProduct/AddProduct.jsx';
 
 
 function App() {
@@ -33,18 +39,25 @@ function App() {
         <ToggleThemeProvider>
             <LanguageProvider>
               <BrowserRouter>
-                <Layout >
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/account" element={<Account />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/products" element={<Products />} />
-                    <Route path="/products/:id" element={<ProductDetails />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path='*' element={<NotFound/>}/>
-                  </Routes>
-                </Layout>
+                <AuthProvider>
+                  <Layout >
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+                      <Route path="/Categories" element={<Categories />} />
+                      <Route path="/products/:categoryName" element={<Products />} />
+                      <Route path="/products" element={<Products />} />
+                      <Route path="/addproduct" element={<AddProduct />} />
+ 
+                      <Route path="/products/:id" element={<ProductDetails />} />
+                      <Route path="/cart" element={<Cart />} />
+                      <Route path="/fav" element={<Favourite />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/login" element={<Login />} />
+                      <Route path='*' element={<NotFound/>}/>
+                    </Routes>
+                  </Layout>
+                </AuthProvider>
               </BrowserRouter> 
             </LanguageProvider>
         </ToggleThemeProvider>
