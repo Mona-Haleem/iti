@@ -1,8 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, TextField, Typography } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
 import { AuthContext } from '../../contexts/AuthContext';
 
 
