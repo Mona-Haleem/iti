@@ -1,6 +1,6 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import IconWithBadge from "./iconWithBadge";
+import IconWithBadge from "./IconWithBadge";
 
 const routes = [
   { href: "/", label: "Home" },
