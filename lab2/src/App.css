@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 30px;
+}
+
+.overlay-header{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    to top, 
+    rgba(0,0,0,0.8),
+    transparent
+  );
+}
+
+.badgeIcon{
+  color:red;
+  background-color: white;
+  border-radius: 50%;
+  width: 16px;
+  text-align: center;
+  height: 16px;
+}
